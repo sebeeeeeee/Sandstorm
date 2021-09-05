@@ -1,0 +1,23 @@
+{
+    "name": "Sandstorm",
+    "description": "New tab page, YouTube adblocker, todo and more!",
+    "version": "1.0.4",
+    "icons": { "128": "images/icon.png" },
+    "browser_action": {
+      "default_icon": "images/small_icon.png",
+      "default_popup": "src/todo.html"
+    },
+
+    "chrome_url_overrides": 
+    {
+        "newtab": "src/index.html"
+    },
+
+    "permissions": ["webRequest","<all_urls>", "webRequestBlocking", "activeTab"],
+    
+    "background": {
+        "scripts": ["src/background.js"]
+    },
+
+    "manifest_version": 2
+  }

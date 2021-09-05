@@ -1,0 +1,197 @@
+<!-- Don't steal code or u are gay lmao -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+</head>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  color: black;
+}
+
+#time {
+  font-size: 8rem;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 3rem;
+  color: white;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+  color: white;
+}
+
+.help{
+  position: fixed;
+  top: 730px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: .4s linear;
+}
+
+.help:hover{
+  transform: rotate(180deg);
+}
+
+.news{
+  position: fixed;
+  top: 690px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: .4s linear;
+}
+
+.news:hover{
+  transform: rotate(180deg);
+}
+
+
+.modal {
+  position: fixed;
+  font-family: 'Quicksand', sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: black;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: red;
+}
+
+.modal-body {
+  padding: 10px 15px;
+  color: black;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (max-width: 700px) {
+  #time {
+    font-size: 6rem;
+  }
+}
+</style>
+<body translate="no">
+
+<time id="time"></time>
+<h1>
+<span id="greeting"></span>
+<span spellcheck="false" id="name" contenteditable="true"></span>
+</h1>
+<h2>What is your focus today?</h2>
+<h2 spellcheck="false" id="focus" contenteditable="true"></h2>
+<button data-modal-target="#modal" class="news"><i class="fas fa-bars"></i></button>
+<a style="text-decoration: none;" href="help.html">
+<button class="help"><i class="fas fa-question-circle"></i></button>
+</a>
+
+
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title">News</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+   <strong>26 April 2020</strong><br>
+   <p>Today Sandstorm got a news popup. Here will all news and announcements come up!</p>
+
+   <!--<br>
+   <p>|</p>
+   <br>
+
+   <strong>26 April 2020</strong><br>
+   <p>Today Sandstorm got a News modal. Here will all news and announcements come up!</p>-->
+
+  
+  </div>
+</div>
+<div id="overlay"></div>
+</body>
+<script src="index.js"></script>
+</html>

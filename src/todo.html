@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700">
+<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  width: 300px;
+  min-height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+background-image: url(https://images.unsplash.com/photo-1576350090957-3b7738497608?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1000&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=300);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+body {
+	font: 16px 'Ubuntu', sans-serif;
+}
+
+header {
+	text-align: center;
+}
+header h1 {
+	font-size: 64px;
+	font-weight: 300;
+	margin: 80px 0 25px;
+	color: #000000;
+}
+header h1 span {
+	font-weight: 700;
+}
+header h2 {
+	color: #000000;
+}
+
+.app-insert {
+	width: 800px;
+	margin: 50px auto 20px;
+}
+.app-insert input {
+	width: 100%;
+	height: 60px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #000000;
+	outline: none;
+	font: 300 28px 'Ubuntu', sans-serif;
+	padding: 20px;
+}
+
+.app-list {
+	width: 800px;
+	margin: 0 auto;
+}
+.task {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	position: relative;
+	color: rgb(0, 0, 0);
+
+	transition: all .2s ease;
+}
+.task:hover {
+	background: rgba(138, 138, 138, 0.04);
+	cursor: pointer;
+}
+.task:hover .remove-task {
+	opacity: 1;
+}
+.task-complete {
+	text-decoration: line-through;
+	color: #797979;
+}
+.remove-task {
+	opacity: 0;
+	position: absolute;
+	right: 520px;
+	text-decoration: none;
+	color: #000000;
+
+	transition: all .2s ease;
+}
+.remove-task:hover {
+	color: rgb(114, 114, 114);
+}
+
+::placeholder {
+	color: rgb(0, 0, 0);
+}
+</style>
+</head>
+<body translate="no">
+<section style="color: white;" class="app-insert">
+<input maxlength="18" type="text" name="task" placeholder="I have to...">
+</section>
+<section class="app-list">
+<ul></ul>
+</section>
+<script src="todo.js"></script>
